@@ -43,7 +43,7 @@
     fclose($op);
  
 //伪装成图片
-    $im = imagecreatefromjpeg("2.jpg");//注意该目录下，也要有2.jpg这个图片
+    $im = imagecreatefromjpeg("2.jpg");//注意该目录下，也要有2.jpg这个图片。
     header('Content-Type: image/jpeg');
     imagejpeg($im);
     imagedestroy($im);
