@@ -38,7 +38,7 @@
 //记录后台地址等信息
     $hack = 'date: '.$date_.'ip:'.$ip."\r\n".'referer: '.$referer.'ua: '.$ua;
     $hack = filter_dangerous_words($hack);
-    $op = fopen($_GET["id"].'.txt','a+'); //通过get参数id生成文件名
+    $op = fopen($_GET["id"].'.txt','a+'); //通过get参数‘id’生成文件名
     fwrite($op,$hack);
     fclose($op);
  
